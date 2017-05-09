@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="SliderText" parent="@android:style/TextAppearance.Small">
+  	<item name="android:textSize">20sp</item>
+  	<item name="android:textStyle">italic</item>
+
+  </style>
+    <style name="AppThemeDark" parent="Theme.AppCompat">
+      <item name="customAddIcon">@drawable/ic_menu_add_light</item>
+      <item name="customDeleteIcon">@drawable/ic_menu_delete</item>
+      <item name="customSettingsItemTitle">@color/white</item>
+      <item name="customTimeIcon">@drawable/ic_dialog_time</item>
+      <item name="customDivider">@android:drawable/divider_horizontal_dark</item>
+      <item name="customTitlePageIndicatorText">@color/white</item>
+      <item name="customTitlePageIndicatorSelectedText">@color/white</item>
+      <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+      <item name="customAppBarOverlay">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+      <item name="customPopupOverlay">@style/ThemeOverlay.AppCompat.Dark</item>
+      <item name="customCardBackgroundColor">@color/card_view_black</item>
+    </style>
+
+  <style name="MainAppThemeDark" parent="AppThemeDark" >
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+</resources>

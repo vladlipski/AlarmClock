@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="by.bsuir.vladlipski.alarmon"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionName="1.2.0" android:versionCode="4">
+
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name">
+    <activity
+        android:name="by.bsuir.vladlipski.alarmon.ActivityAlarmClock"
+        android:theme="@style/MainAppThemeDark"
+        android:launchMode="singleTask">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name="by.bsuir.vladlipski.alarmon.ActivityAlarmNotification"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:launchMode="singleInstance"
+        android:screenOrientation="portrait"/>
+    <activity
+        android:name="by.bsuir.vladlipski.alarmon.ActivityAlarmSettings"
+        android:theme="@style/AppThemeDark"
+        android:finishOnTaskLaunch="true"/>
+    <activity
+        android:name="by.bsuir.vladlipski.alarmon.ActivityAppSettings"
+        android:theme="@style/AppThemeDark"
+        android:finishOnTaskLaunch="true"/>
+    <service android:name="by.bsuir.vladlipski.alarmon.AlarmClockService"/>
+    <service android:name="by.bsuir.vladlipski.alarmon.NotificationService"/>
+    <receiver android:name="by.bsuir.vladlipski.alarmon.ReceiverAlarm"/>
+    <receiver android:name="by.bsuir.vladlipski.alarmon.ReceiverDeviceBoot">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+      </intent-filter>
+    </receiver>
+  </application>
+
+</manifest>
